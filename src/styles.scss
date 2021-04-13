@@ -7,5 +7,39 @@ Version: 1.0.0
 March 2021
 */
 
-/*IMPORT LAYOUT - SPACING - GRID FROM BOOTSTRAP*/
+@import '~@angular/material/theming';
+@include mat-core();
+
+//IMPORTO PALETTE PERSONALIZZATA
+@import "custom-palette";
+
+//ASSOCIO COLORI PERSONALIZZATI A COLORI MATERIAL
+$BS5-Italia-primary: mat-palette($custom-primary);
+$BS5-Italia-accent: mat-palette($custom-accent);
+$BS5-Italia-warn: mat-palette($custom-danger);
+
+// CONFIGURA IL TEMA PER USARE I COLORI CUSTOM
+$BS5-Italia-theme: mat-light-theme((
+  color: (
+    primary: $BS5-Italia-primary,
+    accent: $BS5-Italia-accent,
+    warn: $BS5-Italia-warn
+  )
+));
+
+// IMPORTA STILE CORE E DI TUTTI I COMPONENTI
+@include angular-material-theme($BS5-Italia-theme);
+
+// IMPORT LAYOUT - SPACING - GRID FROM BOOTSTRAP
 @import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css";
+
+// IMPORT CUSTOM FONTS
+@import "custom-fonts";
+
+// ==============================================
+// =============CSS APPLICAZIONE=================
+// ==============================================
+
+html, body { height: 100%; }
+body { margin: 0; font-family: "Titillium Web", sans-serif; }
