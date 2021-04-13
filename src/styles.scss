@@ -44,8 +44,10 @@ $button: mat-typography-level(14px, 18px, 600)
 // APPLICA STILE CORE E DI TUTTI I COMPONENTI
 @include angular-material-theme($BS5-Italia-theme);
 
-// IMPORT LAYOUT - SPACING - GRID FROM BOOTSTRAP
+// IMPORTO FUNZIONI DA BOOTSTRAP
 @import "../node_modules/bootstrap/scss/functions";
+
+// CUSTOMIZZO COLORI BOOTSTRAP
 $theme-colors: (
   "primary": $bi-primary,
   "secondary": $bi-secondary,
@@ -54,13 +56,14 @@ $theme-colors: (
   "info": $bi-info,
   "danger": $bi-danger,
 );
+
+// IMPORTO VARIABILI E MIXIN DA BOOTSTRAP
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
+
+// IMPORT LAYOUT - SPACING - GRID FROM BOOTSTRAP
 @import "../node_modules/bootstrap/scss/bootstrap-grid";
 @import "../node_modules/bootstrap/scss/bootstrap-utilities";
-
-/*@import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
-@import "../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css";*/
 
 
 
