@@ -13,6 +13,9 @@ March 2021
 //IMPORTO PALETTE PERSONALIZZATA
 @import "custom-palette";
 
+// IMPORT CUSTOM FONTS
+@import "custom-fonts";
+
 //ASSOCIO COLORI PERSONALIZZATI A COLORI MATERIAL
 $BS5-Italia-primary: mat-palette($custom-primary);
 $BS5-Italia-accent: mat-palette($custom-accent);
@@ -27,15 +30,39 @@ $BS5-Italia-theme: mat-light-theme((
   )
 ));
 
-// IMPORTA STILE CORE E DI TUTTI I COMPONENTI
+$BS5-Italia-typography: mat-typography-config(
+$font-family: 'Titillium Web',
+$headline: mat-typography-level(32px, 48px, 700),
+$body-1: mat-typography-level(18px, 24px, 500),
+$button: mat-typography-level(14px, 18px, 600)
+);
+
+//APPLICA TIPOGRAFIA A TUTTI I COMPONENTI
+@include angular-material-typography($BS5-Italia-typography);
+/*@include mat-base-typography($BS5-Italia-typography);*/
+
+// APPLICA STILE CORE E DI TUTTI I COMPONENTI
 @include angular-material-theme($BS5-Italia-theme);
 
 // IMPORT LAYOUT - SPACING - GRID FROM BOOTSTRAP
-@import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
-@import "../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css";
+@import "../node_modules/bootstrap/scss/functions";
+$theme-colors: (
+  "primary": $bi-primary,
+  "secondary": $bi-secondary,
+  "success": $bi-success,
+  "warning": $bi-warning,
+  "info": $bi-info,
+  "danger": $bi-danger,
+);
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/bootstrap-grid";
+@import "../node_modules/bootstrap/scss/bootstrap-utilities";
 
-// IMPORT CUSTOM FONTS
-@import "custom-fonts";
+/*@import "../node_modules/bootstrap/dist/css/bootstrap-grid.min.css";
+@import "../node_modules/bootstrap/dist/css/bootstrap-utilities.min.css";*/
+
+
 
 // ==============================================
 // =============CSS APPLICAZIONE=================
